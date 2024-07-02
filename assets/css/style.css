@@ -1,0 +1,335 @@
+*{
+    font-family: "Averia Sans Libre", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+      }
+
+header{
+    grid-area: header;
+}
+
+aside{
+    grid-area: aside;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+ /* Contenedor principal */
+.container{
+    display: grid;
+    grid-template-areas:
+    "aside"
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    height: 100vh;
+    grid-template-rows: 10% 10% auto 10%;
+}
+ /* Fin Contenedor principal */
+
+ /* Sección nav bar */
+.icono{
+    height: 50px;
+    border-radius: 100%;
+    padding-left: 10px;
+}
+
+.menu{
+    padding-right: 20px;
+}
+
+
+.aside{
+    background-color:#7030A0;
+    display: flex;
+    justify-content: space-between;
+    color: #EEF3F9;
+    align-items: center;
+}
+
+.lista{
+    ul{
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+    }
+    li {
+        margin-right: 10px;
+    }
+    a {
+        text-decoration: none;
+        color:  #EEF3F9;
+    }
+}
+
+ /* Fin Sección nav bar */
+
+ /* sección filtro */
+.header{
+    display: flex;
+    color: #7030A0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#AEBDE0;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    p{
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+}
+.filtro{
+    width: 300px;
+}
+ /* fin sección filtro */
+
+ /* sección articulos */
+.main{
+    background-color: #EEF3F9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid  rgb(174, 182, 182);
+    background-color: white;
+    color: rgb(117, 121, 121);
+    padding-bottom: 10px;
+    h5{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    }
+    p{
+        color: rgb(117, 121, 121);
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card2{
+    display: none;
+}
+
+.card-img-top {
+   height: 400px;
+   width: 400px;
+}
+
+.boton{
+    background-color: #7030A0;
+    border-radius: 3px;
+    box-shadow: none;
+    color: white;
+    height: 30px;
+}
+
+.paginacion {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    
+ }
+
+ .paginas{
+background-color: white;
+color:   #7030A0;
+box-shadow: none;
+border: 1px solid;
+border-color: rgb(201, 197, 197);
+font-size: 20px;
+
+
+ }
+
+ /* Fin sección articulos */
+
+ /* sección piede pagina */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#AEBDE0;
+    color: #7030A0;
+    gap: 0px;
+    p{
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
+}
+
+.iconos-footer{
+    display: flex;
+    gap: 20px;
+    padding-top: 10px;
+
+}
+
+/* Fin sección piede pagina */
+
+
+/* Versión Escritorio */
+@media(width >= 576px){
+    .container{
+        grid-template-areas:
+        "aside header"
+        "aside main"
+        "footer footer";
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: 50px auto 50px;
+    }
+    .aside{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+            i{
+                display: none;
+        }
+    }
+
+    .icono{
+        height: 100px;
+        border-radius: 100%;
+        padding-top: 10px;
+    }
+
+    .lista{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .sin-punto{
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+       a{
+        text-decoration: none;
+        color:  #EEF3F9;
+       }        
+    }
+
+    .filtro{
+        width: 400px;
+    }
+
+    .main{
+        background-color: #EEF3F9;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 7px;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .card{
+        display: none;
+    }
+
+    .card2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid  rgb(174, 182, 182);
+        background-color: white;
+        color: rgb(117, 121, 121);
+        padding-bottom: 5px;
+            h5{
+                margin-top: 3px;
+                margin-bottom: 3px;
+        }
+        p{ 
+            color: rgb(117, 121, 121);
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: 15px;
+        }
+    }
+
+    .card-img-top {
+        height: 200px;
+        width: 200px;
+    }
+
+    .card-escritorio{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .footer{
+        display: flex;
+        align-content: center;
+        text-align: center;
+            i{
+                padding-bottom: 0px;
+        }
+    }
+}
+
+
+/* animaciones y transiciones */
+img {
+    filter: grayscale(0%);
+    transition: filter 0.3s ease-out;
+  }
+  main img:hover {
+    filter: grayscale(100%);
+    cursor: pointer;
+  }
+
+  button {
+    background-color: rebeccapurple;
+    transition: background-color 3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  button:hover {
+    background-color: rgb(155, 116, 219);
+    transform: scale(1,1.2);
+    cursor: pointer;
+  }
+
+  ul li a {
+    background-color: rebeccapurple;
+    transition: background-color 3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  ul li a:hover{
+    background-color: rgb(155, 116, 219);
+    transform: scale(1,1.5);
+    cursor: pointer;
+  }
